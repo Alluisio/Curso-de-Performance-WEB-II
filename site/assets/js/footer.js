@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+setTimeout(function() {
 
 	var newsletterButton = document.querySelector('.footer-newsletter-button');
 	var inputEmail = document.querySelector('.footer-newsletter-input');
@@ -8,6 +8,12 @@ window.addEventListener('load', function() {
 	}
 
 
+	inputEmail.onfocus = function (){
+		var prerender = document.createElement('link');
+		prerender.rel = 'prerender';
+		prerender.href = 'cadastrado.html';
+		document.head.appendChild(prerender);
+	}
 
 	// quando clicar no botão, valida o email, 
 	// chama API e redireciona pra pagina de confirmacao
@@ -51,4 +57,4 @@ window.addEventListener('load', function() {
 
 	}
 
-});
+}, 1000);
